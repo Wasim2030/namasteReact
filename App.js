@@ -43,14 +43,8 @@ const Header = () => {
   );
 };
 
-const styleCard = {
-  // this is a js object
-  backgroundColor: "yellow",
-  color: "red",
-};
 const RestaurantCard = () => {
   return (
-    // <div className="res-card" style={styleCard}>
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
         className="res-logo"
@@ -70,12 +64,6 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
         <RestaurantCard />
         <RestaurantCard />
         <RestaurantCard />
