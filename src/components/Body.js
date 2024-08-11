@@ -3,9 +3,6 @@ import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 
 const Body = () => {
-  // as soon as listOfRestaurant changes (on click event) => it will automatically refreshes my component. This is known as render
-  // whenever a state variable updates/changes , react rerenders the component.
-  // open Elements console and see the div with classe res-card before and after clicking on the button
   const [listOfRestaurant, setListOfRestaurant] = useState([
     {
       data: {
@@ -61,7 +58,6 @@ const Body = () => {
       },
     },
   ]);
-  console.log(listOfRestaurant);
 
   return (
     <div className="body">
