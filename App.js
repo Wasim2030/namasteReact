@@ -33,7 +33,6 @@ const RestaurantCard = (props) => {
     costForTwo,
     deliveryTime,
   } = resData?.data;
-  // resData?.data = ? optional chaining
 
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
@@ -42,16 +41,9 @@ const RestaurantCard = (props) => {
         alt="res-logo"
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          // resData.data.cloudinaryImageId
           cloudinaryImageId
         }
       />
-      {/* <h3>{resData.data.name}</h3>
-      <h4>{resData.data.cuisines.join(", ")}</h4>
-      <h4>{resData.data.avgRating}</h4>
-      <h4>₹{resData.data.costForTwo / 100} FOR TWO</h4>
-      <h4>{resData.data.deliveryTime} minutes</h4> */}
-
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating}</h4>
@@ -1951,16 +1943,6 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        {/* if i have one object */}
-        {/* <RestaurantCard resData={resList} /> */}
-
-        {/* if i have an array of object */}
-        {/* <RestaurantCard resData={resList[0]} />
-        <RestaurantCard resData={resList[1]} />
-        <RestaurantCard resData={resList[2]} /> */}
-
-        {/* looping over an aray and creating the RestaurantCard one by one  */}
-        {/* Warning: Each child in a list should have a unique "key" prop. */}
         {resList.map((restaurant) => (
           <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
@@ -1980,9 +1962,3 @@ const AppLayout = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />);
-
-// notes
-// App.js:1953 Warning: Each child in a list should have a unique "key" prop.
-// e.g each of the list item should be uniquely presented
-// whenever you are looping => give key
-// key is reserved word, we have to pass unique id to it
