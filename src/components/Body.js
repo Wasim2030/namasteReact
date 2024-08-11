@@ -3,17 +3,7 @@ import resList from "../utils/mockData";
 import { useState } from "react";
 
 const Body = () => {
-  // lets use the mock data from utils
-  // const [listOfRestaurant, setListOfRestaurant] = useState(resList);
-  // the above is array destructuring.useState returns an array
-
-  const arr = useState(resList);
-  // above is basically like this
-  // const [listOfRestaurant, setListOfRestaurant] = arr; // this is arrray dectructuring
-
-  // above is like
-  const listOfRestaurant = arr[0];
-  const setListOfRestaurant = arr[1];
+  const [listOfRestaurant, setListOfRestaurant] = useState(resList);
 
   return (
     <div className="body">
