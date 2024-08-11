@@ -1,4 +1,4 @@
-let listOfRestaurant = [
+let resList = [
   {
     data: {
       id: "255655",
@@ -136,4 +136,4 @@ let listOfRestaurant = [
   },
 ];
 
-export default listOfRestaurant;
+export default resList;
