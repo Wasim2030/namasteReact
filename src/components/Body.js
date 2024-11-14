@@ -23,8 +23,9 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
-    console.log(json);
+    console.log("json:", json);
     console.log(
+      "restaurants: ",
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -38,7 +39,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurant.filter(
-              (res) => res.data.avgRating > 4
+              (res) => res?.info?.avgRating > 4.5
             );
             setListOfRestaurant(filteredList);
           }}
