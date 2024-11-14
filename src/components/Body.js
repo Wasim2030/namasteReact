@@ -1,15 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-// import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
-  // console.log("before useEffect");
-
-  // first body is rendered then useeffect is called
   useEffect(() => {
-    // console.log("use effect called");
     fetchData();
   }, []);
 
@@ -22,15 +17,7 @@ const Body = () => {
     setListOfRestaurant(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-
-    console.log("json:", json);
-    console.log(
-      "restaurants: ",
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
   };
-
-  // console.log("after useEffect");
 
   return (
     <div className="body">
