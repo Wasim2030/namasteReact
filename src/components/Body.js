@@ -4,7 +4,6 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
-  // console.log(listOfRestaurant);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -34,16 +33,11 @@ const Body = () => {
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
-              // console.log(searchText);
             }}
           />
 
           <button
             onClick={() => {
-              // filter the restaurant cards and update the ui
-              // will need search text
-              // console.log(searchText);
-
               const filteredRestaurant = listOfRestaurant.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
