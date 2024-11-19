@@ -21,32 +21,38 @@ const Body = () => {
   };
 
   // adding spinner untill data loads
-  if (listOfRestaurant.length === 0) {
-    // return <h1>Loading...</h1>;
-    return <Shimmer />;
-  }
+  // conditional rendering - rendering on the basis of conditions
+  // if (listOfRestaurant.length === 0) {
+  //   // return <h1>Loading...</h1>;
+  //   return <Shimmer />;
+  // }
 
   return (
-    <div className="body">
-      <div className="filter">
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurant.filter(
-              (res) => res?.info?.avgRating > 4.5
-            );
-            setListOfRestaurant(filteredList);
-          }}
-        >
-          Top Rated Restaurant
-        </button>
+    // using ternary operator for Shimmer UI
+    listOfRestaurant.length === 0 ? (
+      <Shimmer />
+    ) : (
+      <div className="body">
+        <div className="filter">
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filteredList = listOfRestaurant.filter(
+                (res) => res?.info?.avgRating > 4.5
+              );
+              setListOfRestaurant(filteredList);
+            }}
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
+        <div className="res-container">
+          {listOfRestaurant.map((restaurant) => (
+            <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+          ))}
+        </div>
       </div>
-      <div className="res-container">
-        {listOfRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
+    )
   );
 };
 
